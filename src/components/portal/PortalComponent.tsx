@@ -7,17 +7,38 @@ type Props = {
 
 const PortalComponent = ({ children, show }: Props) => {
     if (!show) return;
+    const portalElement = document.querySelector('#portalElement')!;
+    const handleClick = (
+        e: React.MouseEvent<HTMLDivElement>
+    ) => {
+        e.stopPropagation();
+        console.log(`Stop propagation`);
+    };
 
     return createPortal(
-        <div style={{ position: 'absolute', bottom: 0, left: 0 }}>{children}</div>,
-        document.body
+        <div
+            onClick={handleClick}
+            style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                border: '1px solid red',
+                padding: '10px'
+            }}
+        >
+            {children}
+        </div>,
+        portalElement
     );
 };
 
 export default function PortalComponentExample() {
     const [show, setShow] = useState(false);
     return (
-        <div>
+        <div
+            onClick={() => console.log(`parent div clicked`)}
+            style={{ width: '100%', height: '100vh', backgroundColor: '#ddd' }}
+        >
             <h3>Portal</h3>
             <button onClick={() => setShow(prev => !prev)}>
                 {show ? 'Hide' : 'Show'}

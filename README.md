@@ -2,6 +2,8 @@
 
 - Compound Components
 - Container Components
+- Custom Hooks
+- HOComponents
 - Lists
 - Modal
 - Observer

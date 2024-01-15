@@ -1,10 +1,13 @@
-import RenderPropsLoaderExample from './components/container-components/RenderPropsLoader';
-import ControlledFlowExample from './components/controlled-flow/ControlledFlow';
+import React, { useEffect } from 'react';
+import PortalComponentExample from './components/portal/PortalComponent';
+import ForwardRefComponentExample from './components/forward-refs/ForwardRefComponent';
 
 function App() {
     return (
         <>
-            <ControlledFlowExample />
+            {/* To test the selected functionality, install a specific 
+            component here */}
+            <ForwardRefComponentExample />
         </>
     );
 }

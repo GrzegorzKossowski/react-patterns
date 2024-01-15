@@ -16,3 +16,17 @@ export type IList = {
     sourceName: string;
     ItemComponent: React.ElementType;
 };
+
+export interface JPUser {
+    id: number;
+    [key: string]: string;
+    address: {
+        [key: string]: string;
+        geo: {
+            [key: string]: string;
+        };
+    };
+    company: {
+        [key: string]: string;
+    };
+}
