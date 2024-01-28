@@ -1,12 +1,14 @@
-import DeferredValueExample from './components/use-deferred-value/DeferredValue';
-import ImperativeHandle from './components/use-imperative-handle/ImperativeHandle';
+import { useFetchUsers } from './api/usersApi/useFetchUsers';
 
 function App() {
+    const { users, fetchUsersStatus } = useFetchUsers();
+
     return (
         <>
             {/* To test the selected functionality, use a specific 
             component here */}
-            <DeferredValueExample />
+            {fetchUsersStatus === 'PENDING' && <>Loading...</>}
+            {users && users.map(user => <div key={user.id!}>{user.name!}</div>)}
         </>
     );
 }

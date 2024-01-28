@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { JPUser } from '../../types';
+import { IJPUser } from '../../types';
 
 const useLoadData = (id: number) => {
-    const [user, setUser] = useState<JPUser>();
+    const [user, setUser] = useState<IJPUser>();
     // load user by id
     useEffect(() => {
         (async () => {

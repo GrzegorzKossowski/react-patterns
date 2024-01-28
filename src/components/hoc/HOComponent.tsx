@@ -1,9 +1,9 @@
 import React, { PropsWithChildren, useEffect, useState } from 'react';
-import { JPUser } from '../../types';
+import { IJPUser } from '../../types';
 
 const withLoadData = (Component: React.ElementType) => {
     return (props: { id: number } & PropsWithChildren) => {
-        const [user, setUser] = useState<JPUser>();
+        const [user, setUser] = useState<IJPUser>();
         const { id } = props;
         // load user by id
         useEffect(() => {

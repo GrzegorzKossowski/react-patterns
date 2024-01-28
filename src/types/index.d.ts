@@ -17,7 +17,7 @@ export type IList = {
     ItemComponent: React.ElementType;
 };
 
-export interface JPUser {
+export interface IJPUser {
     id: number;
     [key: string]: string;
     address: {
