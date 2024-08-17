@@ -9,7 +9,7 @@ const AuthorInfo = ({ author }: { author?: IAuthor }) => {
 
 interface DataSourceLoaderProps {
     getData: () => Promise<object>;
-    resourceName?: string;
+    resourceName: string;
     children?: React.ReactNode;
 }
 

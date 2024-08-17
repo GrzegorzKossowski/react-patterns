@@ -32,8 +32,8 @@ const RegularList = ({
     return (
         <>
             {items &&
-                items.map((item, index) => (
-                    <ItemComponent key={index} {...{ [sourceName]: item }} />
+                items.map((item) => (
+                    <ItemComponent key={item.id} {...{ [sourceName]: item }} />
                 ))}
         </>
     );

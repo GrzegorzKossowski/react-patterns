@@ -5,19 +5,19 @@ const AuthorInfo = ({ author }: { author: IAuthor }) => {
     return <>Author: {author?.name}</>;
 };
 
-const RenderPropsLoader = ({
+const RenderPropsLoader = <T,>({
     getData,
     render,
 }: {
     getData: () => Promise<object>;
-    render: (resource: IAuthor) => JSX.Element;
+    render: (resource: T) => JSX.Element;
 }) => {
-    const [resource, setResource] = useState<IAuthor>();
+    const [resource, setResource] = useState<T>();
 
     // load data
     useEffect(() => {
         (async () => {
-            const data = (await getData()) as IAuthor;
+            const data = (await getData()) as T;
             if (data) setResource(data);
         })(); // self invoked function
     }, [getData]);

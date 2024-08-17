@@ -1,32 +1,34 @@
 export interface IAuthor {
-    name: string;
-    age: number;
-    country: string;
-    books: string[];
+  id: string;
+  name: string;
+  age: number;
+  country: string;
+  books: string[];
 }
 
 export interface IBook {
-    name: string;
-    pages: number;
-    title: string;
-    price: number;
+  id: string;
+  name: string;
+  pages: number;
+  title: string;
+  price: number;
 }
 export type IList = {
-    items: Array<IAuthor | IBook>;
-    sourceName: string;
-    ItemComponent: React.ElementType;
+  items: Array<IAuthor | IBook>;
+  sourceName: string;
+  ItemComponent: React.ElementType;
 };
 
 export interface IJPUser {
-    id: number;
+  id: number;
+  [key: string]: string;
+  address: {
     [key: string]: string;
-    address: {
-        [key: string]: string;
-        geo: {
-            [key: string]: string;
-        };
+    geo: {
+      [key: string]: string;
     };
-    company: {
-        [key: string]: string;
-    };
+  };
+  company: {
+    [key: string]: string;
+  };
 }
